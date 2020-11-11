@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+    api:
+        build: "./frontend"
+        container_name: tasks-front-container
+        restart: always
+        volumes:
+          - ./frontend/frontendapp:/home/node/app
+        ports:
+          - "3001:3001"
