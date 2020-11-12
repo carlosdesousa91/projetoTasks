@@ -8,6 +8,15 @@ class Login extends Component {
 
     login = event => {
         console.log(this.state.credentials);
+        fetch('http://200.130.111:8000/auth/', {
+            method:'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(this.state.credentials)
+        }).then(
+            data => {
+                console.log(data);
+            }
+        ).catch(error => console.error(error))
     }
     inputChanged = event => {
         const cred = this.state.credentials;
@@ -20,21 +29,21 @@ class Login extends Component {
         return (
             <div >
             <h1>Login user form</h1>
-            <labe>
+            <label>
                 username:
                 <input type="text" name="username" 
                 value={this.state.credentials.username}
                 onChange={this.inputChanged}
                 />
-            </labe>
+            </label>
             <br/>
-            <labe>
+            <label>
                 senha:
                 <input type="password" name="password" 
                 value={this.state.credentials.password}
                 onChange={this.inputChanged}
                 />
-            </labe>
+            </label>
             <br/>
             <button onClick={this.login}>Login</button>
             </div>
