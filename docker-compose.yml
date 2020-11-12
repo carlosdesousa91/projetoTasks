@@ -1,11 +1,18 @@
 version: "3.8"
-
+   
 services:
-    api:
-        build: "./frontend"
-        container_name: tasks-front-container
-        restart: always
-        volumes:
-          - ./frontend/frontendapp:/home/node/app
-        ports:
-          - "3001:3001"
+  api:
+    build: ./backend
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/backend
+    ports:
+      - "8000:8000"
+  frontapp:
+    build: "./frontend"
+    container_name: tasks-front-container
+    restart: always
+    volumes:
+      - ./frontend/frontendapp:/home/node/app
+    ports:
+      - "80:3000"

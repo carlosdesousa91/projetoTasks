@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:10-slim
 WORKDIR /home/node/app
-RUN npm install --save npm-install-global
+CMD npm start
 
