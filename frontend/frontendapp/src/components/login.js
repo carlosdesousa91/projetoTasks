@@ -8,7 +8,7 @@ class Login extends Component {
 
     login = event => {
         console.log(this.state.credentials);
-        fetch('http://200.130.111:8000/auth/', {
+        fetch('http://200.130.75.111:8000/auth/', {
             method:'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(this.state.credentials)
