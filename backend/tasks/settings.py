@@ -75,8 +75,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tasks.wsgi.application'
 
 CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
     'http://localhost:80',
-    'http://200.130.75.111'
+    'http://localhost'
 ]
 
 # Database
