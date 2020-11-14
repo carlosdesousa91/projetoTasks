@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
       < Login userLogin={userLogin}/>
-      <Tasks />
+      <Tasks token={token}/>
     </div>
   );
 }
