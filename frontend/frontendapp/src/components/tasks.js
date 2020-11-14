@@ -10,7 +10,10 @@ class Tasks extends Component {
 
         fetch('http://localhost:8000/api/tasks/', {
             method:'GET',
-            headers: {'Content-Type': 'application/json'},
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Token ${this.props.token}`
+            },
             body: JSON.stringify(this.state.credentials)
         })
         .then(data => data.json())
