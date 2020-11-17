@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'corsheaders',
     'api',
+    'tasks.fazer',
 ]
 
 MIDDLEWARE = [
