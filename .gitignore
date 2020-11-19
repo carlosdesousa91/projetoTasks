@@ -1,1 +1,4 @@
-/database/data
+database/data/
+./database/data/
+database/data
+testeignore
