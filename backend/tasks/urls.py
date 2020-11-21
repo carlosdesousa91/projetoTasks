@@ -11,10 +11,14 @@ router =routers.DefaultRouter()
 router.register(r'fazer', FazerViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
+    #path('', include(router.urls)),
+    path('', views.view),
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
     path('auth/', obtain_auth_token),
-    path('tas', views.tas),
-    
+    path('tas/', views.tas),
+    path('view/', views.view),
+    path('delete/<int:id>', views.delete),
+    path('edit/<int:id>', views.edit),
+    path('update/<int:id>', views.update),
 ]
